@@ -9,6 +9,11 @@
 
 With gRPC you can choose between four different communication patterns. Unary which is open a connection, send the request, and get the response. Stream server where the connection is opened and a request is sent, but this time the server continues to send response messages till it determines that it's finished. The client keeps listening till the end of the messages. Stream client where the opposite of the stream server happens. The client opens the connection and sends a stream of request messages . When the client finishes sending requests the server responds and the connection is closed. Last there is the dual stream setup. This one is a bit different. The last two types the unary side of the conversation needed to wait for the end of the stream, but in the dual type requests and responses can travel back and forth at during the connection.
 
+###### Useful Links
+- [Basic server/client setups for all types](https://grpc.io/docs/languages/go/basics/)
+- [Google protobuf docs](https://developers.google.com/protocol-buffers/docs/overview)
+- [Case study using gRPC streams](https://ably.com/blog/grpc-stream-performance)
+
 ##### Unary {#unary-type}
 I think that we're all pretty familiar with the unary type of gRPC server pattern. None the less we'll go through the server setup for the Hello Service that I've setup here.
 
