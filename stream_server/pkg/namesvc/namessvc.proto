@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package namesservice;
+
+option go_package = "gitlab.gs.kount.com/kount/Luke/daily_notes/2021/learnanddevops/grpc_servers/stream_server/pkg/namesvc;namesservice";
+
+service NamesService {
+    rpc GetNames(GetNamesRequest) returns (stream GetNamesResponse) {};
+}
+
+message GetNamesRequest {};
+
+message GetNamesResponse {
+    string name = 1;
+}

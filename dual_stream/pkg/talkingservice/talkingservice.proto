@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package talkingservice;
+
+option go_package = "gitlab.gs.kount.com/kount/Luke/daily_notes/2021/learnanddevops/grpc_servers/dual_stream/pkg/talkingservice;talkingservice";
+
+service TalkingService {
+    rpc Chat(stream ChatRequest) returns (stream ChatResponse) {};
+}
+
+message User {
+    string id = 1;
+    string name = 2;
+}
+
+message ChatRequest {
+    User user = 1;
+    string userSaid = 2;
+    string chatId = 3;
+}
+
+message ChatResponse {
+    User user = 1;
+    string serverReplied = 2;
+    string chatId = 3;
+    string ResponseId = 4;
+}

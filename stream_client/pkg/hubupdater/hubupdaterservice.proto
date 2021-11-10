@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package hubupdaterservice;
+
+option go_package = "gitlab.gs.kount.com/kount/Luke/daily_notes/2021/learnanddevops/grpc_servers/stream_client/pkg/hubservice;hubupdaterservice";
+
+service HubUpdaterService {
+    rpc UpdateStatusEvents(stream UpdateStatusEventsRequest) returns (UpdateStatusEventsResponse) {};
+}
+
+message UpdateStatusEventsRequest {
+    string id = 1;
+    float xCord = 2;
+    float yCord = 3;
+};
+
+message UpdateStatusEventsResponse {
+    repeated string updatedId = 1;
+}

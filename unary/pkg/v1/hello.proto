@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package hello.v1;
+
+option go_package = "gitlab.gs.kount.com/kount/Luke/daily_notes/2021/learnanddevops/2021_10_13/v1;hellov1";
+
+service HelloService {
+    rpc Hello(HelloRequest) returns (HelloResponse) {};
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloResponse {
+    string greeting = 1;
+}
